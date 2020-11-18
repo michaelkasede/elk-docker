@@ -4,6 +4,7 @@ ARG CURATOR_VERSION=5.7.6
 ENV CURATOR_VERSION=$CURATOR_VERSION
 
 RUN apk add --no-cache tini python py-pip                   \
+  && pip install --upgrade pip                              \
   && pip install elasticsearch-curator==${CURATOR_VERSION}  \
   && pip install -U pyyaml==3.12
 
